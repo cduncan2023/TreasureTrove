@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BookRecommendationSystem",
+            "request": "launch",
+            "mainClass": "BookRecommendationSystem",
+            "projectName": "OOD Proj_b7c68374"
+        },
+        {
+            "type": "java",
+            "name": "OurFavoritesApp",
+            "request": "launch",
+            "mainClass": "OurFavoritesApp",
+            "projectName": "OOD Proj_b7c68374"
+        },
+        {
+            "type": "java",
             "name": "Socials",
             "request": "launch",
             "mainClass": "Socials",

@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
 import javax.sound.sampled.*;
+import java.util.List;
 
 public class TreasureTroveApp {
     public static void main(String[] args) {
@@ -33,7 +34,7 @@ public class TreasureTroveApp {
         panel.add(introLabel);
 
         // New label underneath "Welcome to Treasure Trove"
-        JLabel newLabel = new JLabel("Find new books,swim in our socials!");
+        JLabel newLabel = new JLabel("Find new books, swim in our socials!");
         newLabel.setBounds(10, 25, 280, 15);
         panel.add(newLabel);
 
@@ -75,7 +76,10 @@ public class TreasureTroveApp {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Add code to launch search functionality
-                System.out.println("Launching Search...");
+                List<Book> searchResults = searchBooks();
+                SwingUtilities.invokeLater(() -> {
+                    displaySearchResults(searchResults);
+                });
             }
         });
 
@@ -124,5 +128,33 @@ public class TreasureTroveApp {
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
+    }
+
+    // Method to display search results in a new window
+    private static void displaySearchResults(List<Book> searchResults) {
+        JFrame resultsFrame = new JFrame("Search Results");
+        resultsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        resultsFrame.setSize(400, 300);
+
+        JPanel resultsPanel = new JPanel();
+        resultsFrame.add(resultsPanel);
+
+        JTextArea resultsTextArea = new JTextArea();
+        resultsTextArea.setEditable(false);
+
+        for (Book book : searchResults) {
+            resultsTextArea.append(book.toString() + "\n");
+        }
+
+        JScrollPane scrollPane = new JScrollPane(resultsTextArea);
+        resultsPanel.add(scrollPane);
+
+        resultsFrame.setVisible(true);
+    }
+
+    // Method to search books using the BookRecommendationSystem
+    private static List<Book> searchBooks() {
+        String searchQuery = JOptionPane.showInputDialog("Enter search keywords (title, author, genre, etc.):");
+        return BookRecommendationSystem.searchBooks(searchQuery);
     }
 }
