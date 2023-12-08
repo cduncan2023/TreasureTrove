@@ -17,9 +17,9 @@ public class Socials extends JFrame {
         panel.setLayout(new GridLayout(3, 1));
 
         // Add social media links
-        addLink(panel, "Instagram", "https://www.instagram.com/");
-        addLink(panel, "Facebook", "https://www.facebook.com/");
-        addLink(panel, "Twitter", "https://twitter.com/");
+        addLink(panel, "Instagram", "https://www.instagram.com/book_challenges_monthly");
+        addLink(panel, "Facebook", "https://www.facebook.com/groups/whatshouldiread/");
+        addLink(panel, "Twitter", "https://twitter.com/susanorlean");
 
         add(panel);
         setVisible(true);

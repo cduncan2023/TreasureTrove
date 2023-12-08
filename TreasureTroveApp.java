@@ -32,26 +32,31 @@ public class TreasureTroveApp {
         introLabel.setBounds(10, 5, 280, 15);
         panel.add(introLabel);
 
+        // New label underneath "Welcome to Treasure Trove"
+        JLabel newLabel = new JLabel("Find new books,swim in our socials!");
+        newLabel.setBounds(10, 25, 280, 15);
+        panel.add(newLabel);
+
         // Buttons
         JButton quizButton = new JButton("Quiz");
-        quizButton.setBounds(10, 30, 80, 25);
+        quizButton.setBounds(10, 50, 80, 25);
         panel.add(quizButton);
 
         JButton searchButton = new JButton("Search");
-        searchButton.setBounds(100, 30, 80, 25);
+        searchButton.setBounds(100, 50, 80, 25);
         panel.add(searchButton);
 
         JButton textButton = new JButton("Music");
-        textButton.setBounds(190, 30, 80, 25);
+        textButton.setBounds(190, 50, 80, 25);
         panel.add(textButton);
 
-        JButton textButton2 = new JButton("Social Media Links");
-        textButton2.setBounds(280, 30, 80, 25);
+        JButton textButton2 = new JButton("Socials");
+        textButton2.setBounds(280, 50, 80, 25);
         panel.add(textButton2);
 
         // Text below the buttons
         JLabel outroLabel = new JLabel("Explore and Enjoy!");
-        outroLabel.setBounds(10, 70, 280, 15);
+        outroLabel.setBounds(10, 90, 280, 15);
         panel.add(outroLabel);
 
         // ActionListener for Quiz button
